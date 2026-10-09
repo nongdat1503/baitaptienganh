@@ -118,6 +118,7 @@ function showSelectTenseScreen() {
 }
 
 // Màn hình Chi Tiết Lý Thuyết & Bài Tập
+// Màn hình Chi Tiết Lý Thuyết & Làm Bài Tập
 function showTenseDetail(tenseId) {
     const tense = grammarTenses.find(t => t.id === tenseId);
     if (!tense) return;
@@ -138,16 +139,40 @@ function showTenseDetail(tenseId) {
         const item = document.createElement('div');
         item.className = 'exercise-item';
         
-        let optionsHTML = '';
+        // 1. Tiêu đề câu hỏi
+        const qTitle = document.createElement('div');
+        qTitle.innerHTML = `<b>Câu ${idx + 1}:</b> ${ex.question}`;
+        item.appendChild(qTitle);
+
+        // 2. Container chứa các nút đáp án
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'ex-options';
+
+        const expId = `exp_${idx}`;
+
         ex.options.forEach(opt => {
-            optionsHTML += `<button class="opt-btn" onclick="checkAnswer(this, '${opt}', '${ex.answer}', 'exp_${idx}')">${opt}</button>`;
+            const btn = document.createElement('button');
+            btn.className = 'opt-btn';
+            btn.innerText = opt;
+
+            // Gắn sự kiện click an toàn, không lo vỡ chuỗi ký tự
+            btn.addEventListener('click', function() {
+                checkAnswer(this, opt, ex.answer, expId);
+            });
+
+            optionsDiv.appendChild(btn);
         });
 
-        item.innerHTML = `
-            <div><b>Câu ${idx + 1}:</b> ${ex.question}</div>
-            <div class="ex-options">${optionsHTML}</div>
-            <div class="explanation" id="exp_${idx}">💡 <b>Giải thích:</b> ${ex.explanation}</div>
-        `;
+        item.appendChild(optionsDiv);
+
+        // 3. Phần giải thích chi tiết
+        const expDiv = document.createElement('div');
+        expDiv.className = 'explanation';
+        expDiv.id = expId;
+        expDiv.style.display = 'none'; // Mặc định ẩn giải thích
+        expDiv.innerHTML = `💡 <b>Giải thích:</b> ${ex.explanation}`;
+        item.appendChild(expDiv);
+
         exList.appendChild(item);
     });
 }
