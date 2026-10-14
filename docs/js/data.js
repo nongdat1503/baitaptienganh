@@ -1224,9 +1224,9 @@ const grammarTenses = [
         formula: '<b>Cấu trúc:</b> S + am/is/are + V-ing<br>- I đi với <b>am</b> | He/She/It/Số ít đi với <b>is</b> | You/We/They/Số nhiều đi với <b>are</b>',
         signals: 'now, right now, at the moment, Look!, Listen!, Be quiet!...',
 exercises: [
-            { question: 'Look! The baby _____ (cry).', options: ['is crying', 'cries', 'cried', 'are crying'], answer: 'is crying', explanation: 'Dấu hiệu "Look!", chủ ngữ số ít ➔ is crying.' },
+            { question: 'Look! The baby _____ (cry).', options: [ 'cries','is crying', 'cried', 'are crying'], answer: 'is crying', explanation: 'Dấu hiệu "Look!", chủ ngữ số ít ➔ is crying.' },
             { question: 'We _____ (play) football right now.', options: ['are playing', 'is playing', 'play', 'were playing'], answer: 'are playing', explanation: 'Dấu hiệu "right now", chủ ngữ "We" ➔ are playing.' },
-            { question: 'Listen! Someone _____ (knock) on the door.', options: ['is knocking', 'knocks', 'are knocking', 'knocked'], answer: 'is knocking', explanation: 'Dấu hiệu mệnh lệnh "Listen!", "Someone" là đại từ bất định số ít ➔ is knocking.' },
+            { question: 'Listen! Someone _____ (knock) on the door.', options: [ 'knocks', 'are knocking','is knocking', 'knocked'], answer: 'is knocking', explanation: 'Dấu hiệu mệnh lệnh "Listen!", "Someone" là đại từ bất định số ít ➔ is knocking.' },
             { question: 'They _____ (not / watch) TV at the moment.', options: ['aren\'t watching', 'isn\'t watching', 'don\'t watch', 'not watching'], answer: 'aren\'t watching', explanation: 'Dấu hiệu "at the moment", chủ ngữ "They" ➔ aren\'t watching.' },
             { question: 'What _____ you doing now?', options: ['are', 'is', 'do', 'have'], answer: 'are', explanation: 'Chủ ngữ "you" trong thì Hiện tại tiếp diễn ➔ đi với tobe "are".' },
             { question: 'Keep silent! The teacher _____ (explain) the lesson.', options: ['is explaining', 'explains', 'are explaining', 'explained'], answer: 'is explaining', explanation: 'Dấu hiệu "Keep silent!", chủ ngữ "The teacher" số ít ➔ is explaining.' },
